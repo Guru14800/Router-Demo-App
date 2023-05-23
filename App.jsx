@@ -24,6 +24,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
+        {/*---------- Protected Routes----------*/}
         <Route
           path="/profile"
           element={
@@ -41,11 +42,14 @@ function App() {
           }
         />
         <Route path="order-summary" element={<OrderSummary />} />
+        {/*---------- Nested Routes---------- */}
+
         <Route path="products" element={<Products />}>
           <Route index element={<FeaturedProducts />} />
           <Route path="featured" element={<FeaturedProducts />} />
           <Route path="new" element={<NewProducts />} />
         </Route>
+        {/* ----------Dynamic Routes---------- */}
         <Route path="users" element={<Users />}>
           <Route path=":userId" element={<UserDetails />} />
           <Route path="admin" element={<Admin />} />
